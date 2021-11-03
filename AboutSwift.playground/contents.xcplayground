@@ -6,5 +6,9 @@
         <page name='DataType'/>
         <page name='CollectionType'/>
         <page name='Method'/>
+        <page name='Basic Operator'/>
+        <page name='Loop-Function'/>
+        <page name='Optional'/>
+        <page name='Struct'/>
     </pages>
 </playground>
