@@ -10,5 +10,7 @@
         <page name='Loop-Function'/>
         <page name='Optional'/>
         <page name='Struct'/>
+        <page name='Initialization'/>
+        <page name='Properties'/>
     </pages>
 </playground>
