@@ -12,5 +12,8 @@
         <page name='Struct'/>
         <page name='Initialization'/>
         <page name='Properties'/>
+        <page name='assert'/>
+        <page name='Protocol'/>
+        <page name='Exrension'/>
     </pages>
 </playground>
