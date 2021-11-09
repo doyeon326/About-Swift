@@ -12,5 +12,8 @@
         <page name='Struct'/>
         <page name='Initialization'/>
         <page name='Properties'/>
+        <page name='ClassVSStrudture'/>
+        <page name='Inheritance'/>
+        <page name='TypeCasting'/>
     </pages>
 </playground>
