@@ -15,5 +15,12 @@
         <page name='assert'/>
         <page name='Protocol'/>
         <page name='Exrension'/>
+        <page name='ClassVSStrudture'/>
+        <page name='Inheritance'/>
+        <page name='TypeCasting'/>
+        <page name='Enum'/>
+        <page name='OptionalChaning'/>
+        <page name='TryCatch'/>
+        <page name='Closer'/>
     </pages>
 </playground>
