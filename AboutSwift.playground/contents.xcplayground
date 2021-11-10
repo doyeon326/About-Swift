@@ -22,5 +22,6 @@
         <page name='OptionalChaning'/>
         <page name='TryCatch'/>
         <page name='Closer'/>
+        <page name='HigherOrderFunction'/>
     </pages>
 </playground>
