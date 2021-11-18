@@ -66,5 +66,5 @@ extension ViewController: LEDBoardSettingDelegate {
  - 세그웨이로 구현된 하면 전환 방법에서 데이터 전달하기
  - Delegate 패턴을 이요하여 이전화면으로 데이텉 전달하기
  
- Asset에서 다양한 이미지를 추가하는 이유는 다양한 화면에서 해상도가 깨지지 않게 하기 위해서다. 
+ Asset에서 다양한 이미지를 추가하는 이유는 다양한 화면에서 해상도가 깨지지 않게 하기 위해서다.
  */
