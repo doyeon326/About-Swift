@@ -22,8 +22,11 @@ class WriteDiaryViewController: UIViewController {
         super.viewDidLoad()
         configureContentsTextView()
         configureDatePicker()
+        self.confirmButton.isEnabled = false
+        configureInputField()
 
     }
+    
     private func configureContentsTextView() {
         let borderColor = UIColor(red: 220/255, green: 220/255, blue: 220/255, alpha: 1.0)
         self.contenTextView.layer.borderColor = borderColor.cgColor
@@ -40,6 +43,12 @@ class WriteDiaryViewController: UIViewController {
         self.dateTextField.inputView = self.datePicker
         
     }
+    private func configureInputField() {
+        self.contenTextView.delegate = self
+        self.titleTextField.addTarget(self, action: #selector(titleTextFieldDidChange(_:)), for: .editingChanged)
+        self.dateTextField.addTarget(self, action: #selector(titleTextFieldDidChange(_:)), for: .editingChanged)
+    }
+    
     @IBAction func tapConfirmButton(_ sender: Any) {
     }
     
@@ -48,11 +57,29 @@ class WriteDiaryViewController: UIViewController {
         formatter.dateFormat = "yyyy년 MM월 dd일(EEEEE)"
         formatter.locale = Locale(identifier: "ko_KR")
         self.dateTextField.text = formatter.string(from: datePicker.date)
+        self.dateTextField.sendActions(for: .editingChanged )
         
+    }
+    
+    @objc private func titleTextFieldDidChange(_ textField: UITextField) {
+        self.validateInputField()
+    }
+    
+    @objc private func dateTextFieldDidChangne(_ textField: UITextField) {
+        self.validateInputField()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
     
+    private func validateInputField() {
+        self.confirmButton.isEnabled = !(self.titleTextField.text?.isEmpty ?? true) && !(self.dateTextField.text?.isEmpty ?? true) && !self.contenTextView.text.isEmpty
+    }
+}
+
+extension WriteDiaryViewController: UITextViewDelegate {
+    func textViewDidChange(_ textView: UITextView) {
+        self.validateInputField()
+    }
 }
