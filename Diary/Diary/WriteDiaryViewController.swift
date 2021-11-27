@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol WriteDiaryViewDelegate: AnyObject {
+    func didSelectRegister(diary: Diary)
+}
+
 class WriteDiaryViewController: UIViewController {
     @IBOutlet var contenTextView: UITextView!
     
@@ -16,7 +20,8 @@ class WriteDiaryViewController: UIViewController {
     
 
     private let datePicker = UIDatePicker()
-    private var diartDate: Date?
+    private var diaryDate: Date?
+    weak var delegate: WriteDiaryViewDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,12 +55,19 @@ class WriteDiaryViewController: UIViewController {
     }
     
     @IBAction func tapConfirmButton(_ sender: Any) {
+        guard let title = self.titleTextField.text else { return }
+        guard let contents = self.contenTextView.text else { return }
+        guard let date = self.diaryDate else { return }
+        let diary = Diary(title: title, contents: contents, date: date, isStar: false)
+        self.delegate?.didSelectRegister(diary: diary)
+        self.navigationController?.popViewController(animated: true)
     }
     
     @objc private func datePickerValueDidChange(_ datePicker: UIDatePicker) {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy년 MM월 dd일(EEEEE)"
         formatter.locale = Locale(identifier: "ko_KR")
+        self.diaryDate = datePicker.date
         self.dateTextField.text = formatter.string(from: datePicker.date)
         self.dateTextField.sendActions(for: .editingChanged )
         
