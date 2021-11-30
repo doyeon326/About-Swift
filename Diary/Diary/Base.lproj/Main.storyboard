@@ -94,6 +94,10 @@
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="406" height="133"/>
+                                        <connections>
+                                            <outlet property="dateLabel" destination="PyH-VL-HeY" id="eLe-wZ-ZHb"/>
+                                            <outlet property="titleLabel" destination="Teo-Og-arg" id="0rZ-iF-RXo"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -108,6 +112,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="VDB-01-clE"/>
+                    <connections>
+                        <outlet property="collectionView" destination="970-99-3C1" id="PRG-Jw-BWR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XGH-Na-8O8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -197,7 +204,7 @@
         <!--알가 작성-->
         <scene sceneID="F1O-Db-gFr">
             <objects>
-                <viewController id="xmi-C5-M9U" customClass="WriteDiaryViewController" customModule="Diary" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WriteDiaryViewController" id="xmi-C5-M9U" customClass="WriteDiaryViewController" customModule="Diary" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ljs-SA-lmR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
